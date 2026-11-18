@@ -1,0 +1,23 @@
+body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px; margin: 0 auto; padding: 16px; color: #1a1a2e; background: #f6f7fb; }
+header h1 { margin-bottom: 4px; }
+.tagline { color: #555; margin-top: 0; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
+.banner { background: #fff3cd; border: 1px solid #e6c200; border-radius: 8px; padding: 12px; margin: 16px 0; }
+.hidden { display: none; }
+.muted { color: #666; }
+.small { font-size: 0.85em; }
+label { display: block; margin: 10px 0; font-weight: 600; }
+input[type="text"], select { width: 100%; padding: 8px; margin-top: 4px; border: 1px solid #bbb; border-radius: 6px; font-size: 1em; box-sizing: border-box; }
+button { padding: 9px 16px; border: 0; border-radius: 6px; background: #1a73e8; color: #fff; font-size: 1em; cursor: pointer; margin: 4px 4px 4px 0; }
+button:disabled { background: #aaa; cursor: not-allowed; }
+.row { display: flex; gap: 4px; }
+.poll { border-top: 1px solid #eee; padding: 12px 0; }
+.poll h3 { margin: 4px 0; }
+.option { margin: 8px 0; }
+.option-head { display: flex; justify-content: space-between; }
+.bar { height: 8px; background: #e8e8e8; border-radius: 4px; overflow: hidden; margin: 4px 0; }
+.fill { height: 100%; background: #1a73e8; }
+.vote-btn { padding: 5px 12px; font-size: 0.9em; }
+.status { min-height: 1.2em; }
+.status a { word-break: break-all; }
+.name-row input { width: auto; display: inline-block; }

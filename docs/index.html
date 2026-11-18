@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Polls — 1 Agent ID = 1 vote</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Agent Polls</h1>
+  <p class="tagline">On-chain voting where 1 Agent ID = 1 vote. Only Agent ID holders can create polls and vote. No token, no rewards, no fees — just decisions.</p>
+</header>
+
+<main>
+  <section id="deploy-banner" class="banner hidden">
+    The contract is not deployed yet. Set <code>CONTRACT_ADDRESS</code> in
+    <code>app.js</code> after deploying to BNB Chain mainnet.
+  </section>
+
+  <section class="card" id="wallet-card">
+    <h2>Your wallet</h2>
+    <button id="connect-btn">Connect wallet</button>
+    <p id="account-line" class="muted">Not connected.</p>
+    <p id="agentid-line" class="muted"></p>
+    <label class="name-row">Display name (optional, only what you type yourself — never resolved from chain):
+      <input id="display-name" type="text" placeholder="e.g. etlayer.ai" maxlength="64">
+      <button id="save-name-btn">Save</button>
+    </label>
+    <p class="muted small">Your display name is stored only in this browser (localStorage). It is never sent anywhere and never used to look anyone up.</p>
+  </section>
+
+  <section class="card" id="create-card">
+    <h2>Create a poll</h2>
+    <p class="muted">Only Agent ID holders can create polls. A poll needs 2–6 options and a duration of 1 hour to 90 days.</p>
+    <label>Question
+      <input id="q-question" type="text" maxlength="280" placeholder="What should we decide?">
+    </label>
+    <div id="options-box">
+      <label>Option 1 <input class="q-option" type="text" maxlength="140" placeholder="Option 1"></label>
+      <label>Option 2 <input class="q-option" type="text" maxlength="140" placeholder="Option 2"></label>
+    </div>
+    <div class="row">
+      <button id="add-option-btn" type="button">+ Add option</button>
+      <button id="remove-option-btn" type="button">− Remove option</button>
+    </div>
+    <label>Duration
+      <select id="q-duration">
+        <option value="86400">1 day</option>
+        <option value="259200">3 days</option>
+        <option value="604800" selected>7 days</option>
+        <option value="1209600">14 days</option>
+        <option value="2592000">30 days</option>
+      </select>
+    </label>
+    <p id="create-summary" class="muted"></p>
+    <button id="create-btn">Create poll (opens wallet to confirm)</button>
+    <p id="create-status" class="status"></p>
+  </section>
+
+  <section class="card">
+    <h2>Polls</h2>
+    <button id="refresh-btn">Refresh</button>
+    <div id="polls-list"><p class="muted">Loading…</p></div>
+  </section>
+</main>
+
+<footer>
+  <p class="muted small">Agent Polls is an independent community project. It is not affiliated with, endorsed by, or connected to Binance. Voting is free except network gas; there are no rewards and no returns. Every transaction asks for your confirmation in your wallet — nothing is ever signed automatically.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
